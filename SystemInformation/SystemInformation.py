@@ -21,7 +21,7 @@ class AssetInfo(BaseModel):
 class AssetResponse(BaseModel):
     assetInfo: AssetInfo
 
-@app.get("/data/assets/{asset_id}", response_model=AssetResponse)
+@app.get("/sysinfo/assets/{asset_id}", response_model=AssetResponse)
 async def get_asset_info(asset_id: int = Path(..., description="ID of the asset")):
     # For demonstration, returning static data. Replace with DB/query logic as needed.
     # Use async def in FastAPI to enable asynchronous, non-blocking operations for better performance and scalability— especially when your endpoint makes I/O calls (like database or network requests). If your endpoint is simple and synchronous, async is optional.
